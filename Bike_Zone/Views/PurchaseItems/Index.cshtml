@@ -1,0 +1,41 @@
+﻿@model IEnumerable<PurchaseItem>
+@{
+    ViewData["Title"] = "PurchaseItems";
+}
+
+<h1>PurchaseItems</h1>
+
+<div class="container-fluid">
+    <div class="text-end mb-3">
+        <a asp-controller="PurchaseItems" asp-action="Create" class="btn btn-outline-dark">Add</a>
+    </div>
+
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>BikeName</th>
+                <th>Quantity</th>
+                <th>UnitCost</th>
+                <th>Purchase</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var purchaseItems in Model)
+            {
+                <tr>
+                    <td>@purchaseItems.Id</td>
+                    <td>@purchaseItems.BikeName</td>
+                    <td>@purchaseItems.Quantity</td>
+                    <td>@purchaseItems.UnitCost</td>
+                    <td>@purchaseItems.Purchase?.BuyerName</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@purchaseItems.Id" class="btn btn-outline-warning">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@purchaseItems.Id" class="btn btn-outline-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

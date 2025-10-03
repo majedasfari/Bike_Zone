@@ -1,0 +1,37 @@
+﻿@model PurchaseItem
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Add PurchaseItem</h1>
+
+<form method="post" asp-action="Create">
+
+    <div class="mb-3">
+        <label asp-for="BikeName" class="form-label"></label>
+        <input asp-for="BikeName" class="form-control" />
+        <span asp-validation-for="BikeName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Quantity" class="form-label"></label>
+        <input asp-for="Quantity" class="form-control" />
+        <span asp-validation-for="Quantity" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="UnitCost" class="form-label"></label>
+        <input asp-for="UnitCost" class="form-control" />
+        <span asp-validation-for="UnitCost" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="PurchaseId" class="form-label"></label>
+        <select asp-for="PurchaseId" class="form-control" asp-items="@ViewBag.Purchases">
+            <option selected value="">-- Select Purchase --</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-dark">Back</a>
+</form>

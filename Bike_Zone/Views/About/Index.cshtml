@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>About me</h1>
+
+
+<style>
+    .about-container {
+        max-width: 800px;
+        margin: 60px auto;
+        padding: 35px;
+        background: linear-gradient(135deg, #e3f2fd, #ffffff);
+        border-radius: 16px;
+        font-family: 'Segoe UI', sans-serif;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        text-align: center;
+        transition: box-shadow 0.3s ease;
+    }
+
+        .about-container:hover {
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-container img {
+            max-width: 160px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 4px solid #007acc;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        .about-container h2 {
+            color: #007acc;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .about-container p {
+            font-size: 18px;
+            line-height: 1.9;
+            color: #2c3e50;
+            margin-bottom: 18px;
+        }
+
+    .highlight {
+        font-weight: bold;
+        color: #007acc;
+    }
+
+    .tech-stack {
+        margin-top: 20px;
+    }
+
+    .tech-tag {
+        display: inline-block;
+        background-color: #007acc;
+        color: #fff;
+        padding: 8px 14px;
+        border-radius: 20px;
+        font-size: 14px;
+        margin: 6px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+</style>
+
+<div class="about-container">
+    <img src="~/one.jpg" alt="Majed Asfari" />
+
+    <h2>مجد أصفري</h2>
+    <p>مطور ويب يهتم ببناء حلول تقنية عملية، أنيقة، وقابلة للتوسع</p>
+    <p>هذا الموقع تم تطويره باستخدام إطار العمل <br /><span class="highlight">ASP.NET Core MVC</span></p>
+    <p> ويهدف إلى تقديم المهارات والخبرات التقنية بشكل احترافي وسهل التصفح</p>
+    <p>أؤمن بأن الكود النظيف والتجربة البصرية الممتازة هما أساس أي مشروع ناجح</p>
+
+    <div class="tech-stack">
+        <span class="tech-tag">ASP.NET Core</span>
+        <span class="tech-tag">Entity Framework</span>
+        <span class="tech-tag">SQL Server</span>
+        <span class="tech-tag">HTML/CSS</span>
+    </div>
+</div>
+
+

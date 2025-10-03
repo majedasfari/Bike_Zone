@@ -1,0 +1,35 @@
+﻿@model Purchase
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete Purchase</h1>
+
+<form method="post" asp-action="Delete">
+
+
+    <div class="mb-3">
+        <label asp-for="BuyerName" class="form-label"></label>
+        <input asp-for="BuyerName" disabled name="BuyerName" class="form-control" />
+        <span asp-validation-for="BuyerName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="TotalPrice" class="form-label"></label>
+        <input asp-for="TotalPrice" disabled name="TotalPrice" class="form-control" />
+        <span asp-validation-for="TotalPrice" class="text-danger"></span>
+    </div>
+
+
+    <div class="mb-3">
+        <label asp-for="Location" class="form-label"></label>
+        <input asp-for="Location" disabled name="Location" class="form-control" />
+        <span asp-validation-for="Location" class="text-danger"></span>
+    </div>
+
+
+
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-dark">Back</a>
+
+</form>

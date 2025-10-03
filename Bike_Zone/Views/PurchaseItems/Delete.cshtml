@@ -1,0 +1,34 @@
+﻿@model PurchaseItem
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete PurchaseItem</h1>
+
+<form method="post" asp-action="Delete">
+
+    <div class="mb-3">
+        <label asp-for="BikeName" class="form-label"></label>
+        <input asp-for="BikeName" class="form-control" disabled />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Quantity" class="form-label"></label>
+        <input asp-for="Quantity" class="form-control" disabled />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="UnitCost" class="form-label"></label>
+        <input asp-for="UnitCost" class="form-control" disabled />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="PurchaseId" class="form-label"></label>
+        <select asp-for="PurchaseId" class="form-control" asp-items="@ViewBag.Purchases" disabled>
+            <option selected value="">-- Select Purchase --</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-dark">Back</a>
+</form>

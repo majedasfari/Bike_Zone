@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Purchase>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Purchase</h1>
+
+<div class="container-fluid">
+
+    <div class="text-end mb-3">
+
+        <a asp-controller="Purchases" asp-action="Create" class="btn btn-outline-dark">Add New</a>
+
+    </div>
+
+
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>BuyerName</th>
+                <th>Location</th>
+                <th>TotalPrice</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var purchase in Model)
+            {
+
+                <tr>
+                    <td>@purchase.Id</td>
+                    <td>@purchase.BuyerName</td>
+                    <td>@purchase.Location</td>
+                    <td>@purchase.TotalPrice</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-Id="@purchase.Id" class="btn btn-outline-warning">Edit</a>
+                        <a asp-action="Delete" asp-route-Id="@purchase.Id" class="btn btn-outline-danger">Delete</a>
+
+                    </td>
+
+                </tr>
+
+            }
+
+
+        </tbody>
+    </table>
+</div>
